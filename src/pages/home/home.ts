@@ -7,16 +7,18 @@ import { OpenWeatherProvider } from './../../providers/open-weather/open-weather
   templateUrl: 'home.html'
 })
 export class HomePage {
+  loading = true;
+  weather:object;
 
-  result:object;
   constructor(public navCtrl: NavController, public openWeather:OpenWeatherProvider) {
   }
 
   ionViewDidEnter() {
-
-    this.openWeather.get( "manchester" ).subscribe( (res) => {
+    this.loading=true;
+    this.openWeather.getCity( "manchester" ).subscribe( (res) => {
       console.log(res);
-      this.result = res;
+      this.weather = res;
+      this.loading=false;
     });
   }
 

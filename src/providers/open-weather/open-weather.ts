@@ -19,7 +19,7 @@ export class OpenWeatherProvider {
   }
 
 
-  get( city: string ):Observable<Object> {
+  getCity( city: string ):Observable<Object> {
     return this.http.get( this.url + "?appid=" + this.apiKey + "&q=" + city);
   }
 

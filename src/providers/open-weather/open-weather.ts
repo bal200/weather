@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
+import { environment } from './../../environments/environment.prod';
+
 /*
   Generated class for the OpenWeatherProvider provider.
 
@@ -12,17 +14,19 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class OpenWeatherProvider {
 
-  url: string = 'http://api.openweathermap.org/data/2.5/weather';
-  apiKey: string = 'e5ae937b53c31993b4b722b606998544';
+  url: string; 
 
   constructor(public http: HttpClient) {
+    this.url = environment.openWeather.url + "?appid="+environment.openWeather.apiKey;
   }
 
 
   getCity( city: string ):Observable<Object> {
-    return this.http.get( this.url + "?appid=" + this.apiKey + "&q=" + city);
+    return this.http.get( this.url + "&units=metric" + "&q="+city );
   }
 
-
+  getCityId( cityId: string ):Observable<Object> {
+    return this.http.get( this.url + "&units=metric" +"&id="+cityId );
+  }
 
 }

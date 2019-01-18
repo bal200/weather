@@ -15,10 +15,10 @@
       </ion-card-header>
       <ion-list>
         <ion-item>
-            <h1 text-center>{{weather.main.temp - 273.15}}&deg;C</h1>
+            <h1 text-center padding>{{weather.main.temp }}&deg;C</h1>
         </ion-item>
         <ion-item>
-            <h2 text-center>Partly Cloudy</h2>
+            <h2 text-center padding>Partly Cloudy</h2>
         </ion-item>
         
       </ion-list>
@@ -32,7 +32,7 @@
         <ion-col col-10 offset-1>
           <ion-list>
               <ion-item>
-                  Temp: {{weather.main.temp - 273.15}}&deg;C
+                  Temp: {{weather.main.temp }}&deg;C
               </ion-item>
               <ion-item>
                   Wind: {{weather.wind.speed}}mph

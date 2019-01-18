@@ -6,6 +6,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+  <ion-searchbar (ionInput)="getCitys($event)" placeholder="Search your City"></ion-searchbar>
+  
+  <ion-list>
+    <button ion-item (click)="openCityId(item.id)" *ngFor="let item of currentItems">
+      Weather for {{item.name}}, {{item.country}}
+    </button>
+  </ion-list>
 
 </ion-content>
+
+
+

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { OpenWeatherProvider } from './../../providers/open-weather/open-weather';
 
 @Component({
@@ -9,13 +9,17 @@ import { OpenWeatherProvider } from './../../providers/open-weather/open-weather
 export class HomePage {
   loading = true;
   weather:object;
+  cityId:string;
 
-  constructor(public navCtrl: NavController, public openWeather:OpenWeatherProvider) {
+  constructor(public navCtrl: NavController, public openWeather:OpenWeatherProvider,
+              public navParams: NavParams) {
+    
+    this.cityId = navParams.get('cityId') || "manchester";
   }
-
+  
   ionViewDidEnter() {
     this.loading=true;
-    this.openWeather.getCity( "manchester" ).subscribe( (res) => {
+    this.openWeather.getCityId( this.cityId ).subscribe( (res) => {
       console.log(res);
       this.weather = res;
       this.loading=false;

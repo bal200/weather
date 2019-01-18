@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { OpenWeatherProvider } from '../providers/open-weather/open-weather';
+import { CitysProvider } from '../providers/citys/citys';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { OpenWeatherProvider } from '../providers/open-weather/open-weather';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    OpenWeatherProvider
+    OpenWeatherProvider,
+    CitysProvider
   ]
 })
 export class AppModule {}

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 export interface City {
-  id: string;
+  id: number;
   name: string;
 }
 
@@ -23,15 +23,24 @@ export class CitysProvider {
     });
   }
 
+  /* loading the city list from a local file */
   getCityListFile(): Observable<any> {
     return this.http.get("assets/data/cityList.json");
   }
 
+  /** filter/search the citys by a search string.
+  *** limits the search to only 10 results, for brevity
+  **/
   query( searchString:string ) : Array<City> {
     const search = searchString.toLowerCase();
-    return this.citys.filter( (city:City) => 
-      city.name.toLowerCase().indexOf(search) >= 0 
-    );
+    let count=0;
+    return this.citys.filter( (city:City) => {
+      if (count>7) return false;
+      if (city.name.toLowerCase().indexOf(search) >= 0) {
+        count++;
+        return true;
+      }
+    });
 
   }
 

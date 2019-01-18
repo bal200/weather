@@ -17,12 +17,11 @@ export class SearchPage {
   /** Search for the typed string in the City list **/
   getCitys(ev) {
     let searchString = ev.target.value;
-    if (!searchString || !searchString.trim()) {
+    if (!searchString || (searchString.trim().length <3)) {
       this.currentCitys = [];
       return;
     }
     this.currentCitys = this.citys.query( searchString );
-console.log(this.currentCitys);
   }
 
   /** when a City is tapped in the list, load the Weather page **/

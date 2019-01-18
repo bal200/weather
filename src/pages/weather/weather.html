@@ -15,10 +15,14 @@
       </ion-card-header>
       <ion-list>
         <ion-item>
-            <h1 text-center padding>{{weather.main.temp }}&deg;C</h1>
+            <h1 text-center >{{weather.main.temp | number:'1.0-0'}}&deg;C</h1>
         </ion-item>
         <ion-item>
-            <h2 text-center padding>Partly Cloudy</h2>
+          <img src="{{'http://openweathermap.org/img/w/'+weather.weather[0].icon+'.png'}}" 
+               class="weather-icon" alt="">
+        </ion-item>
+        <ion-item>
+            <h2 text-center >{{weather.weather[0].description}}</h2>
         </ion-item>
         
       </ion-list>
@@ -32,7 +36,7 @@
         <ion-col col-10 offset-1>
           <ion-list>
               <ion-item>
-                  Temp: {{weather.main.temp }}&deg;C
+                  Temp: {{weather.main.temp | number:'1.1-1' }}&deg;C
               </ion-item>
               <ion-item>
                   Wind: {{weather.wind.speed}}mph

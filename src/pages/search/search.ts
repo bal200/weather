@@ -9,7 +9,7 @@ import { WeatherPage } from '../weather/weather';
 })
 export class SearchPage {
   
-  currentItems: any = [];
+  currentCitys: any = [];
 
   constructor(public navCtrl: NavController, public citys:CitysProvider) {
   }
@@ -18,11 +18,11 @@ export class SearchPage {
   getCitys(ev) {
     let searchString = ev.target.value;
     if (!searchString || !searchString.trim()) {
-      this.currentItems = [];
+      this.currentCitys = [];
       return;
     }
-    this.currentItems = this.citys.query( searchString );
-
+    this.currentCitys = this.citys.query( searchString );
+console.log(this.currentCitys);
   }
 
   /** when a City is tapped in the list, load the Weather page **/

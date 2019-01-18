@@ -8,7 +8,7 @@
 
   <div *ngIf="loading" text-center>Loading...</div>
 
-  <div *ngIf="weather" class="">
+  <div *ngIf="weather">
     <ion-card>
       <ion-card-header text-center>
           Weather forecast for {{weather.name}}
@@ -49,8 +49,8 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-
   </div>
+
   
 
 </ion-content>

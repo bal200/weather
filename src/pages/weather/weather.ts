@@ -10,7 +10,11 @@ interface Weather {
     humidity: string,
     pressure: string
   },
-  weather: []
+  weather: [
+    {
+      description: string
+    }
+  ]
 
 }
 

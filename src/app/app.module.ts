@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
+import { SearchPage } from '../pages/search/search';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { WeatherPage } from '../pages/weather/weather';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,9 +17,9 @@ import { CitysProvider } from '../providers/citys/citys';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    SearchPage,
     ContactPage,
-    HomePage,
+    WeatherPage,
     TabsPage
   ],
   imports: [
@@ -30,9 +30,9 @@ import { CitysProvider } from '../providers/citys/citys';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    SearchPage,
     ContactPage,
-    HomePage,
+    WeatherPage,
     TabsPage
   ],
   providers: [

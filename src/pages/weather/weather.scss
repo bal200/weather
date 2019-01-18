@@ -2,7 +2,10 @@ page-weather {
 
   .weather-icon {
     width:45%;
-    margin: -35px auto -35px auto;
+    margin: -10% auto -10% auto;
   }
 
+  .error-text {
+    color: #A99;
+  }
 }

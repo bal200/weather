@@ -6,7 +6,8 @@
 
 <ion-content padding>
 
-  <div *ngIf="loading" text-center>Loading...</div>
+  <div *ngIf="loading" text-center padding>Loading...</div>
+  <div *ngIf="error" text-center padding class="error-text">{{error}}</div>
 
   <div *ngIf="weather">
     <ion-card>

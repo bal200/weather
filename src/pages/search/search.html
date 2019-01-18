@@ -8,7 +8,7 @@
 
 <ion-content>
 
-  <ion-searchbar (ionInput)="getCitys($event)" placeholder="Search your City"></ion-searchbar>
+  <ion-searchbar (ionInput)="getCitys($event)" placeholder="Search your city"></ion-searchbar>
   
   <ion-list>
     <button ion-item (click)="openCityId(item.id)" *ngFor="let item of currentCitys">
@@ -17,11 +17,11 @@
   </ion-list>
 
   <div *ngIf="currentCitys?.length==0">
-
+    <h2>&nbsp;</h2>
     <h2 text-center margin padding class="grey-text">City Weather</h2>
 
     <p text-center margin padding class="light-grey-text">
-      Find the weather right now anywhere in the world.
+      Find the weather in any city in the world.
       Just enter the name of the city above.
     </p>
 

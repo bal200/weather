@@ -15,9 +15,7 @@ interface Weather {
       description: string
     }
   ]
-
 }
-
 
 @Component({
   selector: 'page-weather',
@@ -25,6 +23,7 @@ interface Weather {
 })
 export class WeatherPage {
   loading = true;
+  error="";
   weather: Weather;
   cityId:string;
 
@@ -36,11 +35,15 @@ export class WeatherPage {
   
   ionViewDidEnter() {
     this.loading=true;
-    this.openWeather.getCityId( this.cityId ).subscribe( (res:Weather) => {
-      console.log(res);
-      this.weather = res;
-      this.loading=false;
-    });
+    this.openWeather.getCityId( this.cityId ).subscribe( 
+      (res:Weather) => {
+        this.weather = res;
+        this.loading=false;
+      },error => {
+        this.error=error;
+        this.loading=false;
+      }
+    );
   }
 
 }

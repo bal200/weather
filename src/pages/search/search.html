@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Search
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar (ionInput)="getCitys($event)" placeholder="Search your city"></ion-searchbar>
+  
+  <ion-list>
+    <button ion-item (click)="openCityId(item.id)" *ngFor="let item of currentCitys">
+      Weather in {{item.name}}, {{item.country}}
+    </button>
+  </ion-list>
+
+  <div *ngIf="currentCitys?.length==0">
+    <h2>&nbsp;</h2>
+    <h2 text-center margin padding class="grey-text">City Weather</h2>
+
+    <p text-center margin padding class="light-grey-text">
+      Find the weather in any city in the world.
+      Just enter the name of the city above.
+    </p>
+
+  </div>
+
+</ion-content>
+
+
+

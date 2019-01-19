@@ -14,3 +14,14 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.grey-text {
+  color: #666;
+}
+.light-grey-text {
+  color: #999;
+  line-height: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  
+}

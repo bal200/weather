@@ -8,10 +8,11 @@ export interface City {
 }
 
 /*
-  CitysProvider provider maintains a list of citys and their Ids to match the Open Weather API.
+  CitysProvider provider maintains a list of Citys and their Ids to match the Open Weather API.
   This is used to populate the City search bar.
   query() method is used to filter/search the citys.
 */
+
 @Injectable()
 export class CitysProvider {
   
@@ -30,6 +31,7 @@ export class CitysProvider {
 
   /** filter/search the citys by a search string.
   *** limits the search to only 10 results, for brevity
+  *** returns an Array of Cities.
   **/
   query( searchString:string ) : Array<City> {
     const search = searchString.toLowerCase();

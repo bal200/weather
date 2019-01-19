@@ -30,11 +30,12 @@ export class WeatherPage {
   constructor(public navCtrl: NavController, public openWeather:OpenWeatherProvider,
               public navParams: NavParams) {
     
-    this.cityId = navParams.get('cityId') || "manchester";
+    this.cityId = navParams.get('cityId');
   }
   
   ionViewDidEnter() {
     this.loading=true;
+    /** Make the call to Open Weather to get Weather data **/
     this.openWeather.getCityId( this.cityId ).subscribe( 
       (res:Weather) => {
         this.weather = res;

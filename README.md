@@ -11,8 +11,6 @@ Services used for the open weather api provider, and the city list provider, wit
 
 # Future improvements:
  
-  - Edit the default ionic splash loading icon to match my bespoke spinner icon
-
   - Have an additional feature that would display the weather in the user's current GPS location before they performed a search, using the geolocation plugin.
 
   - To create the search suggestions I downloaded a json file from openweathermap containing the city list, and edited it to contain only the relevant data. However I would have preferred to not download a large file to perform this feature but would connect to an API that contained this data instead.

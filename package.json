@@ -1,8 +1,7 @@
 {
-  "name": "e3",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "City Weather",
+  "version": "0.0.2",
+  "author": "Andy Ballard",
   "private": true,
   "scripts": {
     "start": "ionic-app-scripts serve",

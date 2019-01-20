@@ -31,9 +31,6 @@ export class SearchPage {
     });
   }
 
-  ionViewDidEnter() {
-    
-  }
 
 
 }

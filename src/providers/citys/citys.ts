@@ -20,7 +20,7 @@ export class CitysProvider {
 
   constructor(public http: HttpClient) {
     this.getCityListFile().subscribe(data => {
-      this.citys = data;
+     this.citys = data;
     });
   }
 
@@ -34,11 +34,12 @@ export class CitysProvider {
   *** returns an Array of Cities.
   **/
   query( searchString:string ) : Array<City> {
-    const search = searchString.toLowerCase();
+    const search = searchString.toLowerCase().trim();
     let count=0;
     return this.citys.filter( (city:City) => {
-      if (count>7) return false;
-      if (city.name.toLowerCase().indexOf(search) >= 0) {
+      if (count>=10) return false;
+      const c=city.name.toLowerCase().substr(0,search.length);
+      if (c === search) {
         count++;
         return true;
       }

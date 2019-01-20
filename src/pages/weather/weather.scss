@@ -8,4 +8,7 @@ page-weather {
   .error-text {
     color: #A99;
   }
+  .description {
+    text-transform: capitalize;
+  }
 }
